@@ -1,0 +1,175 @@
+body {
+  font-family: Verdana, Geneva, sans-serif;
+  color: black;
+  background-color: whitesmoke; }
+
+a {
+  color: black;
+  cursor: pointer;
+  text-decoration: none; }
+  a:active {
+    background: none; }
+  a:active, a:focus {
+    outline: none; }
+  a:hover {
+    color: black; }
+
+h1 {
+  color: black;
+  font-weight: bold;
+  line-height: 8.25rem;
+  padding-left: 4px; }
+  h1 a:active,
+  h1 a:focus {
+    outline: 1px dotted black; }
+
+header {
+  background: whitesmoke;
+  position: relative;
+  z-index: 99999; }
+  header a {
+    color: black; }
+    header a:hover {
+      color: black; }
+  header h1 {
+    display: inline-block;
+    font-size: 1rem;
+    font-weight: normal;
+    line-height: 80px;
+    margin: 0;
+    padding: 0 0 0 1rem; }
+
+.directional-nav {
+  background: whitesmoke;
+  user-select: none; }
+  .directional-nav .active-bar-horizontal {
+    bottom: 0;
+    display: block;
+    height: 0;
+    left: 0;
+    position: absolute;
+    transition: height 200ms cubic-bezier(0.8, 0.005, 0.2, 1);
+    width: 140px;
+    z-index: 1; }
+  .directional-nav .active-bar-vertical {
+    background: black;
+    display: block;
+    height: 86px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    transition: width 200ms cubic-bezier(0.8, 0.005, 0.2, 1);
+    width: 0; }
+  .directional-nav .active-bar-horizontal.move,
+  .directional-nav .active-bar-vertical.move {
+    transition: transform 500ms cubic-bezier(0.8, 0.005, 0.2, 1); }
+  .directional-nav ul {
+    list-style-type: none;
+    padding: 0; }
+  .directional-nav li:not(.result) {
+    text-align: center; }
+    .directional-nav li:not(.result):active, .directional-nav li:not(.result):focus {
+      outline: none; }
+  .directional-nav [data-active-bar="false"]:hover ~ .active-bar-horizontal,
+  .directional-nav [data-active-bar="false"]:hover ~ .active-bar-vertical,
+  .directional-nav [data-active-bar="false"]:active ~ .active-bar-horizontal,
+  .directional-nav [data-active-bar="false"]:active ~ .active-bar-vertical,
+  .directional-nav [data-active-bar="false"]:focus ~ .active-bar-horizontal,
+  .directional-nav [data-active-bar="false"]:focus ~ .active-bar-vertical {
+    display: none; }
+  .directional-nav [data-active-bar="false"]:hover ~ .active-bar-horizontal,
+  .directional-nav [data-active-bar="false"]:active ~ .active-bar-horizontal,
+  .directional-nav [data-active-bar="false"]:focus ~ .active-bar-horizontal {
+    transform: translateX(0); }
+  .directional-nav [data-active-bar="false"]:hover ~ .active-bar-vertical,
+  .directional-nav [data-active-bar="false"]:active ~ .active-bar-vertical,
+  .directional-nav [data-active-bar="false"]:focus ~ .active-bar-vertical {
+    transform: translateY(0); }
+  .directional-nav a {
+    display: block;
+    width: 100%; }
+    .directional-nav a:after {
+      background: black;
+      bottom: 0;
+      content: '';
+      position: absolute;
+      right: 0; }
+    .directional-nav a span {
+      color: black; }
+
+.horizontal.directional-nav {
+  position: absolute;
+  right: 0;
+  top: 0; }
+  .horizontal.directional-nav:not([data-on="false"]):hover .active-bar-horizontal {
+    background: black;
+    height: 6px; }
+  .horizontal.directional-nav:not([data-on="false"]) li:focus ~ .active-bar-horizontal,
+  .horizontal.directional-nav:not([data-on="false"]) li:active ~ .active-bar-horizontal {
+    background: black;
+    height: 6px; }
+  .horizontal.directional-nav.pos-0 .active-bar-horizontal {
+    display: block;
+    transform: translateX(0px); }
+  .horizontal.directional-nav.pos-1 .active-bar-horizontal {
+    display: block;
+    transform: translateX(140px); }
+  .horizontal.directional-nav.pos-2 .active-bar-horizontal {
+    display: block;
+    transform: translateX(280px); }
+  .horizontal.directional-nav.pos-3 .active-bar-horizontal {
+    display: block;
+    transform: translateX(420px); }
+  .horizontal.directional-nav.pos-4 .active-bar-horizontal {
+    display: block;
+    transform: translateX(560px); }
+  .horizontal.directional-nav.pos-5 .active-bar-horizontal {
+    display: block;
+    transform: translateX(700px); }
+  .horizontal.directional-nav.pos-6 .active-bar-horizontal {
+    display: block;
+    transform: translateX(840px); }
+  .horizontal.directional-nav.pos-7 .active-bar-horizontal {
+    display: block;
+    transform: translateX(980px); }
+  .horizontal.directional-nav.pos-8 .active-bar-horizontal {
+    display: block;
+    transform: translateX(1120px); }
+  .horizontal.directional-nav.pos-9 .active-bar-horizontal {
+    display: block;
+    transform: translateX(1260px); }
+  .horizontal.directional-nav ul {
+    float: right;
+    margin: 0;
+    position: relative;
+    width: 100%; }
+
+.horizontal li:not(.active-bar-horizontal):not(.result) {
+  float: left;
+  position: relative;
+  width: 140px; }
+  .horizontal li:not(.active-bar-horizontal):not(.result).active a:after {
+    height: 100%; }
+  .horizontal li:not(.active-bar-horizontal):not(.result)[data-icon] {
+    transition: background-color 500ms cubic-bezier(0, 0, 0, 1);
+    width: 100px; }
+    .horizontal li:not(.active-bar-horizontal):not(.result)[data-icon]:active, .horizontal li:not(.active-bar-horizontal):not(.result)[data-icon]:focus {
+      background-color: black; }
+  .horizontal li:not(.active-bar-horizontal):not(.result) img {
+    height: 1.75em;
+    position: relative;
+    top: 10%;
+    z-index: 3; }
+  .horizontal li:not(.active-bar-horizontal):not(.result) a {
+    height: 80px;
+    line-height: 80px; }
+    .horizontal li:not(.active-bar-horizontal):not(.result) a:after {
+      height: 0;
+      transition: height 0.3s cubic-bezier(0.5, 0.8, 0, 1);
+      width: 100%;
+      z-index: 2; }
+  .horizontal li:not(.active-bar-horizontal):not(.result) span {
+    position: relative;
+    z-index: 3; }
+
+/*# sourceMappingURL=ufo.css.map */
